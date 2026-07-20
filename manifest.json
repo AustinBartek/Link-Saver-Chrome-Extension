@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Link Saver",
+  "version": "1.0",
+  "author": "Austin Bartek",
+  "description": "This extension allows you to save links and load them back later! Also, you can assign search keys to each link to help find them again using the search function!",
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "run_at": "document_idle",
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_icon": "logo.png",
+    "default_popup": "index.html",
+    "default_title": "Link Saver"
+  }
+}

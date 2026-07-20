@@ -1,0 +1,197 @@
+<!--
+   index.html
+   Author:
+   Author URI: https://
+   Author Github URI: https://www.github.com/
+   Project Repository URI: https://github.com/
+   Description: The main UI for your Chrome Extension
+   License: MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Link Saver Chrome Extension</title>
+  <style>
+    body {
+      margin: 0px;
+      background-color: rgb(0, 63, 30);
+      width: 100%;
+      height: 100%;
+    }
+
+    #mainButtonContainer {
+      display: flex;
+    }
+
+    .mainButton {
+      margin: 3px;
+
+      color: white;
+      border-color: white;
+      border-style: solid;
+      border-width: 2px;
+      border-radius: 5px;
+      font-size: 20px;
+      box-sizing: border-box;
+    }
+
+    .importExportButton {
+      width: 100px;
+      height: 50px;
+
+      background-color: darkkhaki;
+    }
+    
+    .addLinkButton {
+      width: 180px;
+      height: 50px;
+
+      background-color: #0e8a3a;
+    }
+
+    #linkSearch {
+      width: 200px;
+      height: 40px;
+      display: inline-block;
+      margin: 3px;
+
+      font-size: 20px;
+    }
+
+    .linkItem {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      box-sizing: border-box;
+
+      background-color: #222222;
+      border-color: black;
+      border-width: 2px;
+      border-style: outset;
+    }
+
+    .linkTitleText {
+      color: #2fbdff;
+      font-size: 20px;
+      display: inline-block;
+      margin: 2px;
+    }
+
+    .linkURLText {
+      font-size: 15px;
+      color: gray;
+      text-decoration: underline;
+      display: inline-block;
+      margin: 2px;
+    }
+
+    .linkButtonDiv {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      padding: 5px;
+    }
+
+    .linkButton {
+      border-color: white;
+      border-style: solid;
+      border-width: 2px;
+      border-radius: 5px;
+      color: white;
+
+      width: 80px;
+      aspect-ratio: 2/1;
+    }
+
+    .linkGoButton {
+      background-color: green;
+    }
+
+    .linkEditButton {
+      background-color: rgb(203, 196, 0);
+    }
+
+    .linkRemoveButton {
+      background-color: red;
+    }
+
+    .relativeDiv {
+      background-color: #111111;
+      border-top-width: 3px;
+      border-top-style: solid;
+      border-top-color: black;
+
+      position: relative;
+      min-height: 80px;
+    }
+
+    .addKeyButton {
+      width: 80px;
+      height: 30px;
+
+      background-color: green;
+      color: white;
+      border-radius: 5px;
+      border-color: white;
+      border-width: 2px;
+      border-style: solid;
+
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+    }
+
+    .keyButton {
+      background-color: black;
+      color:greenyellow;
+      border-color: greenyellow;
+      border-radius: 3px;
+      border-width: 1px;
+      border-style: solid;
+
+      font-size: 15px;
+      height: 20px;
+      margin: 2px;
+    }
+
+    #linkContainer {
+      background-color: black;
+      border-color: greenyellow;
+      border-width: 3px;
+      border-style: inset;
+
+      overflow-y: scroll;
+      overflow-x: hidden;
+      width: 800px;
+      height: 500px;
+      box-sizing: border-box;
+      scrollbar-width: 0px;
+    }
+
+    #linkContainer::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="mainButtonContainer">
+    <button id="addLinkButton" class="mainButton addLinkButton">Add Link</button>
+    <button id="addCurrentButton" class="mainButton addLinkButton">Add Current Page</button>
+    <input type="text" id="linkSearch" placeholder="Search for a Link">
+    <button id="exportButton" class="mainButton importExportButton">Export Links</button>
+    <button id="importButton" class="mainButton importExportButton">Import Links</button>
+  </div>
+  <div id="linkContainer"></div>
+
+  <script src="scripts.js"></script>
+</body>
+
+</html>
